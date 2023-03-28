@@ -1,4 +1,4 @@
-package Lesson_07.Ex004;
+package Lecture_01.Ex004;
 
 import java.util.ArrayList;
 

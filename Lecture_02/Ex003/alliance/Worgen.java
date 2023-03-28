@@ -1,6 +1,6 @@
-package Lesson_08.Ex003.alliance;
+package Lecture_02.Ex003.alliance;
 
-import Lesson_08.Ex003.*;
+import Lecture_02.Ex003.*;
 
 public class Worgen extends Priest {
     

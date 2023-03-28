@@ -1,4 +1,4 @@
-package Lesson_08.Ex004;
+package Lecture_02.Ex004;
 
 public class Dwarf extends Druid {
     
