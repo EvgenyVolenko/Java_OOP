@@ -13,9 +13,9 @@ public class Product {
         return name;
     }
 
-    private void setName(String name) {
-        this.name = name;
-    }
+    // private void setName(String name) {
+    //     this.name = name;
+    // }
 
     public boolean sellCounter() {
         this.counter--;
@@ -24,6 +24,10 @@ public class Product {
 
     public double getPrice() {
         return price;
+    }
+
+    public int getValue() {
+        return counter;
     }
 
     public void setPrice(double price) {

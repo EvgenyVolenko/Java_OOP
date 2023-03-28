@@ -32,7 +32,6 @@ public class VendingMachine {
 //            System.out.println("Товар не найден");
             throw new Exception("Товар не найден", e);
         }
-
         return target;
     }
 
