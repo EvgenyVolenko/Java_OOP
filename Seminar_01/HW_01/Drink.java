@@ -33,7 +33,7 @@ public class Drink {
 
     @Override
     public String toString() {
-        return String.format("\"%s\", температура %d C. Цена - %.2f руб.", 
+        return String.format("\"%s\" - температура %d C. Цена - %.2f руб.", 
                this.name, this.temp, this.price);
     }
 }
