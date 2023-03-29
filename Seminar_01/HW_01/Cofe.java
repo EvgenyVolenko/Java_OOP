@@ -9,6 +9,10 @@ public class Cofe extends Drink {
         this.cofeType = cofeType;
     }
 
+    public String getCofeType () {
+        return cofeType;
+    }
+
     @Override
     public String toString() {
         return String.format("\"%s\" - \"%s\", температура %d C. Цена - %.2f руб.", 

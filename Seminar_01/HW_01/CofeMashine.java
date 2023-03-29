@@ -7,11 +7,15 @@ public class CofeMashine {
 
     private List<Drink> drinkS = new ArrayList<>();
     private double money = 0;
-    private int remainsVolume = 1000;
+    private int remainsVolume = 1050;
 
-    public boolean sellVolume() {
-        this.remainsVolume -= 200;
-        return remainsVolume > 0;
+    public boolean sellVolume(Drink drink) {
+        if (this.remainsVolume >= drink.getVolume()) {
+            this.remainsVolume -= drink.getVolume();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public int getRemainsVolume() {
@@ -25,24 +29,31 @@ public class CofeMashine {
 
     public Drink searchDrink(String name) {
         for (Drink item : drinkS) {
-            if (item.getName().equals(name)) {
+            if (item.toString().contains(name)) {
                 return item;
             }
         }
         return null;
     }
 
-    public Drink sell(String name) throws Exception {
+    public Drink sell(String name) {
         Drink target = searchDrink(name);
-        try {
-            if (!this.sellVolume()){
-                System.out.println("Возьмите свой " + target.getName());
-            }
+        if (this.sellVolume(target)) {
             this.money += target.getPrice();
-        } catch (NullPointerException e) {
-            throw new Exception("В аппарате закончилась вода!!!", e);
-        }
+        } 
         return target;
+    }
+
+    public void PrintSell(String nameProd) {
+        try {
+            if (remainsVolume >= searchDrink(nameProd).getVolume()) {
+                System.out.println("Возьмите - " + sell(nameProd));
+            } else {
+                System.out.println("В аппарате закончилась вода!!!");
+            }
+        } catch (Exception e) {
+            System.out.println("Товар не найден");
+        }
     }
 
     @Override
@@ -55,5 +66,4 @@ public class CofeMashine {
         res.append(String.format("В автомате сейчас %.2f рублей", money));
         return res.toString();
     }
-
 }

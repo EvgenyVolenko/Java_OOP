@@ -9,6 +9,10 @@ public class Tea extends Drink {
         this.teaType = teaType;
     }
 
+    public String getTeaType () {
+        return teaType;
+    }
+
     @Override
     public String toString() {
         return String.format("\"%s\" - \"%s\", температура %d C. Цена - %.2f руб.", 
