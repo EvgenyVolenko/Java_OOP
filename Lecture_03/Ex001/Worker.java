@@ -1,5 +1,7 @@
 package Lecture_03.Ex001;
 
+import java.util.Iterator;
+
 public class Worker {
     public String firstName;
     public String lastName;
@@ -18,5 +20,9 @@ public class Worker {
 
     public String fullName() {
         return String.format("%s %s", firstName, lastName);
+    }
+
+    public Iterator<Object> iterator() {
+        return null;
     }
 }

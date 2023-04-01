@@ -26,14 +26,14 @@ public class Program {
 
         //#region Worker Iterator
        
-        // Worker worker = new Worker(
-        //     "Имя", "Фамилия", 23, 4567);
+        Worker worker = new Worker(
+            "Имя", "Фамилия", 23, 4567);
 
-        // Iterator<String> components = worker;
+        Iterator<String> components = worker;
 
-        // while (components.hasNext()) {
-        //     System.out.println(worker.next());
-        // }
+        while (components.hasNext()) {
+            System.out.println(worker.next());
+        }
        
         //#endregion
        

@@ -41,19 +41,19 @@ public class Program {
         // System.out.println(w1.hashCode());
         // System.out.println(w2.hashCode());
 
-        // Worker3 w1 = new Worker3("Имя", "Фамилия", 20, 201);
-        // Worker3 w2 = w1;// new Worker3("Имя", "Фамилия", 20, 201);
+        Worker3 w1 = new Worker3("Имя", "Фамилия", 20, 201);
+        Worker3 w2 = w1;// new Worker3("Имя", "Фамилия", 20, 201);
 
-        // System.out.println(w1 == w2);
-        // System.out.println(w1.equals(w2));
+        System.out.println(w1 == w2);
+        System.out.println(w1.equals(w2));
 
-        // System.out.println(w1);
-        // System.out.println(w2);
+        System.out.println(w1);
+        System.out.println(w2);
 
-        // w1.age = 31;
+        w1.age = 31;
 
-        // System.out.println(w1);
-        // System.out.println(w2);
+        System.out.println(w1);
+        System.out.println(w2);
 
     }
 }
