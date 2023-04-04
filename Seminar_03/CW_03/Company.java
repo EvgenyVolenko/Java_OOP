@@ -11,14 +11,13 @@ public class Company implements Iterable<User> {
     }
 
     List<SubUser> deepTree(User boss, int lvl) {
-
         List<SubUser> result = new ArrayList<>();
         result.add(new SubUser(boss, lvl));
         if (boss.getSubordination() == null || boss.getSubordination().size() == 0) {
             return result;
         }
         for (User item : boss.getSubordination()) {
-            result.addAll(deepTree(item, lvl + 5));
+            result.addAll(deepTree(item, lvl + 3));
         }
         return result;
     }
