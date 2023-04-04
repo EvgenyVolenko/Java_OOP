@@ -11,16 +11,16 @@ public class Main {
                 .addUser(new User("Василий", 42))
                 .addUser(new User("Елена", 21));
 
-        //System.out.println(form1);
+        System.out.println(form1);
 
-        for (User item:form1) {
+        for (User item : form1) {
             System.out.println(item);
         }
 
         List<User> compUsers = form1.toList();
         Collections.sort(compUsers);
         System.out.println();
-        
+
         for (int i = 0; i < compUsers.size(); i++) {
             System.out.println(compUsers.get(i));
         }
@@ -31,7 +31,7 @@ public class Main {
         User pavel = new User("Павел", 42);
         pavel.setSubordination(new Personal().addUser(new User("Алевтина", 21)));
         form2.addUser(pavel)
-             .addUser(boss);
+                .addUser(boss);
         User bigBoss = new User("Ольга", 25);
         bigBoss.setSubordination(form2);
 

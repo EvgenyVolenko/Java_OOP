@@ -21,7 +21,8 @@ public class Personal implements Iterable<User> {
 
             @Override
             public boolean hasNext() {
-                if (counter < users.size()) return true;
+                if (counter < users.size())
+                    return true;
                 return false;
             }
 

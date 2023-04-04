@@ -1,5 +1,5 @@
-public class User implements Comparable<User>{
-    
+public class User implements Comparable<User> {
+
     private String name;
     private int age;
 
@@ -36,7 +36,6 @@ public class User implements Comparable<User>{
 
         return res.toString();
     }
-
 
     @Override
     public int compareTo(User o) {

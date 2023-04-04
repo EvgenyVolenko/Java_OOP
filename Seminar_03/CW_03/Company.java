@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Company implements Iterable<User>{
+public class Company implements Iterable<User> {
 
     User bigBoss;
 
@@ -10,11 +10,11 @@ public class Company implements Iterable<User>{
         this.bigBoss = bigBoss;
     }
 
-    List <SubUser> deepTree (User boss, int lvl){
+    List<SubUser> deepTree(User boss, int lvl) {
 
-        List <SubUser> result = new ArrayList<>();
+        List<SubUser> result = new ArrayList<>();
         result.add(new SubUser(boss, lvl));
-        if (boss.getSubordination() == null || boss.getSubordination().size() == 0){
+        if (boss.getSubordination() == null || boss.getSubordination().size() == 0) {
             return result;
         }
         for (User item : boss.getSubordination()) {
@@ -24,14 +24,14 @@ public class Company implements Iterable<User>{
     }
 
     @Override
-    public Iterator <User> iterator() {
+    public Iterator<User> iterator() {
         return new iterator2();
     }
 
     private class iterator2 implements Iterator<User> {
 
-        List <SubUser> users = deepTree(bigBoss, 1);
-        Iterator <SubUser> countUser = users.iterator();
+        List<SubUser> users = deepTree(bigBoss, 1);
+        Iterator<SubUser> countUser = users.iterator();
 
         @Override
         public boolean hasNext() {
