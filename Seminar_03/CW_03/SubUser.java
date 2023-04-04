@@ -1,10 +1,9 @@
 public class SubUser extends User {
-
     private int lvl;
 
-    // public SubUser(String name, int age) {
-    // super(name, age);
-    // }
+    public SubUser(String name, int age) {
+        super(name, age);
+    }
 
     public SubUser(User user, int lvl) {
         super(user.getName(), user.getAge());
