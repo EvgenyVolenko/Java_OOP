@@ -30,9 +30,9 @@ public class User implements Comparable<User> {
     public String toString() {
         StringBuilder res = new StringBuilder();
         res.append("Сотрудник ")
-                .append(name)
-                .append(" возраст: ")
-                .append(age);
+           .append(name)
+           .append(" возраст: ")
+           .append(age);
 
         return res.toString();
     }
