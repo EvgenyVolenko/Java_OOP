@@ -1,3 +1,5 @@
+package Seminar_03.CW_03;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

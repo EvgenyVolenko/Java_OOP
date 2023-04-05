@@ -1,3 +1,5 @@
+package Seminar_03.CW_03;
+
 public class SubUser extends User {
     private int lvl;
 
