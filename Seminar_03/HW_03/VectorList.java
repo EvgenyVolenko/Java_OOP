@@ -29,7 +29,7 @@ public class VectorList<E> implements Iterable<E> {
         return new VectorIterator(node);
     }
 
-    private class Node<E> {
+    private class Node<P> {
 
         private E element;
 
