@@ -3,6 +3,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Personal implements Iterable<User> {
+   
     private List<User> users = new ArrayList<>();
 
     public Personal addUser(User user) {
