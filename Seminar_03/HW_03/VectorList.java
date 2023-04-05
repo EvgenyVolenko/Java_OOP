@@ -90,5 +90,4 @@ public class VectorList<E> implements Iterable<E> {
             return current.get();
         }
     }
-
 }
