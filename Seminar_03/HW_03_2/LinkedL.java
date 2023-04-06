@@ -5,12 +5,29 @@ public class LinkedL<E> {
     private Node<E> lstNode;
     private int size = 0;
 
-    private class Node<E>{
+    public LinkedL() {
+        this.fstNode = new Node<E>(null, null, lstNode);
+        this.lstNode = new Node<E>(null, fstNode, null);
+    }
+
+    public void addLast(E e) {
+        Node<E> prev = lstNode;
+        prev.setCurrentElement(e);
+        lstNode = new Node<E>(null, prev, null);
+        prev.setNextElement(lstNode);
+        size++;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    private class Node<P> {
         private E currentElement;
         private Node<E> nextElement;
         private Node<E> prevElement;
-        
-        public Node(E currentElement, LinkedL<E>.Node<E> nextElement, LinkedL<E>.Node<E> prevElement) {
+
+        public Node(E currentElement, Node<E> prevElement, Node<E> nextElement) {
             this.currentElement = currentElement;
             this.nextElement = nextElement;
             this.prevElement = prevElement;
