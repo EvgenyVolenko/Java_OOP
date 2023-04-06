@@ -1,5 +1,3 @@
-package Seminar_03.CW_03;
-
 public class User implements Comparable<User> {
 
     private String name;
