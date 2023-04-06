@@ -32,7 +32,6 @@ public class VectorList<E> implements Iterable<E> {
     private class Node<E> {
 
         private E element;
-
         private Node<E> next = null;
 
         Node() {
