@@ -1,4 +1,5 @@
 public abstract class Throwing implements Weapon {
+    
     int range;
 
     public Throwing(int range) {

@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public abstract class Warrior<T extends Weapon> extends Personage {
+    
     protected static Random rnd = new Random();
     protected T weapon;
 

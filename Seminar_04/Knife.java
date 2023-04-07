@@ -1,4 +1,5 @@
 public class Knife implements Weapon {
+    
     @Override
     public int damage() {
         return 10;

@@ -9,6 +9,7 @@ public class Battle {
     }
 
     public Warrior run() {
+        
         while (true) {
             int attak = attacker.harm();
             defender.reduceHp(attak);

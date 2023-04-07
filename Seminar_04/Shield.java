@@ -1,3 +1,3 @@
-public class Shield {
-    
+public abstract class Shield implements Protection {
+         
 }

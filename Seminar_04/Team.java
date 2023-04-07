@@ -3,6 +3,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Team<T extends Personage> implements Iterable<T> {
+    
     List<T> personages = new ArrayList<>();
 
     @Override
