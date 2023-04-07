@@ -1,5 +1,6 @@
 package Lecture_02.Ex005.v2;
 
+import Lecture_02.Ex005.v1.Hero;
 import Lecture_02.Ex005.v2.Healers.Healer;
 import Lecture_02.Ex005.v2.Warriors.Warrior;
 

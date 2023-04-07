@@ -1,4 +1,4 @@
-package Lesson_10.Ex003;
+package Ex003;
 
 import java.util.HashMap;
 import java.util.List;

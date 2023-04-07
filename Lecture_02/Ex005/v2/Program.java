@@ -3,6 +3,7 @@ package Lecture_02.Ex005.v2;
 import java.util.ArrayList;
 import java.util.List;
 
+import Lecture_02.Ex005.v1.Hero;
 import Lecture_02.Ex005.v2.Healers.Druid;
 import Lecture_02.Ex005.v2.Healers.Healer;
 import Lecture_02.Ex005.v2.Healers.Shaman;
