@@ -16,7 +16,7 @@ public class Bow extends Throwing {
     public String toString() {
         StringBuilder res = new StringBuilder();
         res.append(name)
-                .append(String.format("\n\t%s", super.toString()));
+           .append(String.format("\n\t%s", super.toString()));
         return res.toString();
     }
 }

@@ -3,9 +3,9 @@ public class Main {
         Team<Archer> archers = new Team<>();
         Team<Thief> thiefTeam = new Team<>();
         archers.addPers(new Archer("Робин", 100, new Bow(20)))
-                .addPers(new Archer("Гуд", 100, new Bow(15)));
+               .addPers(new Archer("Гуд", 100, new Bow(15)));
         thiefTeam.addPers(new Thief("Джек", 150, new Knife()))
-                .addPers(new Thief("Потрошитель", 150, new Knife()));
+                 .addPers(new Thief("Потрошитель", 150, new Knife()));
         System.out.println(archers);
         System.out.println();
         System.out.println(thiefTeam);
