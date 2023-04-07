@@ -1,17 +1,19 @@
 import java.util.Random;
 
-public abstract class Warrior<T extends Weapon> extends Personage{
-protected static Random rnd = new Random();
+public abstract class Warrior<T extends Weapon> extends Personage {
+    protected static Random rnd = new Random();
     protected T weapon;
+
     public Warrior(String name, int hp, T weapon) {
         super(name, hp);
         this.weapon = weapon;
     }
-    public int harm(){
+
+    public int harm() {
         boolean isHit = rnd.nextBoolean();
         int damage = 0;
-        if (isHit){
-            damage = rnd.nextInt(weapon.damage()+1);
+        if (isHit) {
+            damage = rnd.nextInt(weapon.damage() + 1);
         }
         return damage;
     }

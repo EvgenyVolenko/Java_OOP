@@ -1,4 +1,3 @@
 public interface Weapon {
-int damage();
-
+    int damage();
 }

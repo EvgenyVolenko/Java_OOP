@@ -12,7 +12,7 @@ public class Main {
 
         Archer robin = new Archer("Робин", 50, new Bow(20));
         Archer gud = new Archer("Гуд", 50, new Bow(50));
-        Battle fight = new Battle(robin,gud);
+        Battle fight = new Battle(robin, gud);
         fight.run();
     }
 }

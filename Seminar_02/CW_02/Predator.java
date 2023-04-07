@@ -7,6 +7,4 @@ public abstract class Predator extends Mammal{
     public String feed (){
         return "Мясо";
     }
-
-
 }

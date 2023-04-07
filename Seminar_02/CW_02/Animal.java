@@ -2,6 +2,7 @@ public abstract class Animal implements Speakable {
     protected String name;
 
     public abstract String feed();
+    public abstract String speak();
 
     public Animal(String name) {
         this.name = name;

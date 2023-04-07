@@ -1,4 +1,4 @@
-public class Thief extends Warrior<Knife>{
+public class Thief extends Warrior<Knife> {
     public Thief(String name, int hp, Knife weapon) {
         super(name, hp, weapon);
     }
