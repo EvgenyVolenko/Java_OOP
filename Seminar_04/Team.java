@@ -24,7 +24,7 @@ public class Team<T extends Personage> implements Iterable<T> {
                     .append("\n");
         }
         res.append(String.format("Максимальная дальность: %d\n", maxRange()));
-        res.append(String.format("Самый тяжелый щит в команде: %d", maxWeight()));
+        res.append(String.format("Самый легкий щит в команде: %d", minWeight()));
         return res.toString();
     }
 
@@ -41,23 +41,29 @@ public class Team<T extends Personage> implements Iterable<T> {
         return max;
     }
 
-    public int maxWeight() {
-        int max = 0;
+    public int minWeight() {
+        int min = 100;
         for (T pers : this) {
             if (pers instanceof Thief) {
                 Thief thief = (Thief) pers;
-                if (thief.shield.weight > max) {
-                    max = thief.shield.weight;
+                if (thief.shield.weight < min) {
+                    if (thief.shield.weight == 0) {
+                        continue;
+                    }
+                    min = thief.shield.weight;
                 }
             }
 
             if (pers instanceof Archer) {
                 Archer archer = (Archer) pers;
-                if (archer.shield.weight > max) {
-                    max = archer.shield.weight;
+                if (archer.shield.weight < min) {
+                    if (archer.shield.weight == 0) {
+                        continue;
+                    }
+                    min = archer.shield.weight;
                 }
             }
         }
-        return max;
+        return min;
     }
 }
