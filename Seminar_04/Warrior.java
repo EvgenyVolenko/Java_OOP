@@ -1,13 +1,15 @@
 import java.util.Random;
 
-public abstract class Warrior<T extends Weapon> extends Personage {
-    
+public abstract class Warrior<T extends Weapon, S extends Protection> extends Personage {
+
     protected static Random rnd = new Random();
     protected T weapon;
+    protected S shield;
 
-    public Warrior(String name, int hp, T weapon) {
+    public Warrior(String name, int hp, T weapon, S shield) {
         super(name, hp);
         this.weapon = weapon;
+        this.shield = shield;
     }
 
     public int harm() {
@@ -25,7 +27,8 @@ public abstract class Warrior<T extends Weapon> extends Personage {
         res.append("Воин \n")
                 .append(this.getName())
                 .append(String.format("\n\tHp: %d", getHp()))
-                .append(String.format("\n\tВооружен: %s", this.weapon));
+                .append(String.format("\n\tВооружен: %s", this.weapon))
+                .append(String.format("\n\tЩит: %s", this.shield));
         return res.toString();
     }
 }

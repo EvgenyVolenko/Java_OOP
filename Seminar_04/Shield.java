@@ -10,8 +10,18 @@ public abstract class Shield implements Protection {
         return weight;
     }
 
+    public int getDefens() {
+        if (weight == 0) {
+            return 0;
+        }
+        return this.defens();
+    }
+
     @Override
     public String toString() {
-        return "Shield [weight=" + weight + "]";
+        if (weight == 0) {
+            return "Отсутствует";
+        }
+        return String.format(" щит весом %d с уровнем защиты %d", this.weight, getDefens());
     }
 }
