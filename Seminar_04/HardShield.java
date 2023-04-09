@@ -9,7 +9,10 @@ public class HardShield extends Shield {
 
     @Override
     public int defens() {
-        return 25;
+        if (weight == 0) {
+            return 0;
+        }
+        return 12;
     }
 
     @Override

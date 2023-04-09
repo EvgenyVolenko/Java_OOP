@@ -9,7 +9,7 @@ public class Bow extends Throwing {
 
     @Override
     public int damage() {
-        return 20;
+        return 40;
     }
 
     @Override

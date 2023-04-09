@@ -9,7 +9,10 @@ public class StandartShield extends Shield {
 
     @Override
     public int defens() {
-        return 17;
+        if (weight == 0) {
+            return 0;
+        }
+        return 10;
     }
 
     @Override

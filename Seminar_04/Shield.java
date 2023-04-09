@@ -11,15 +11,12 @@ public abstract class Shield implements Protection {
     }
 
     public int getDefens() {
-        if (weight == 0) {
-            return 0;
-        }
         return this.defens();
     }
 
     @Override
     public String toString() {
-        if (weight == 0) {
+        if (getWeight() == 0) {
             return "Отсутствует";
         }
         return String.format(" щит весом %d с уровнем защиты %d", this.weight, getDefens());
