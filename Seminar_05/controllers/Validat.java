@@ -4,6 +4,10 @@ import Seminar_05.model.User;
 import java.util.regex.Pattern;
 
 public class Validat {
+    final String regex = "^\\S+$";
+    final String reDigit = "^\\d+$";
+    final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
+    final Pattern patternDigit = Pattern.compile((reDigit));
 
     public void validate(User user) {
 
@@ -17,9 +21,4 @@ public class Validat {
             throw new RuntimeException("Номер телефона пользователя не может быть пустым");
         }
     }
-
-    final String regex = "^\\S+$";
-    final String reDigit = "^\\d+$";
-    final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
-    final Pattern patternDigit = Pattern.compile((reDigit));
 }
