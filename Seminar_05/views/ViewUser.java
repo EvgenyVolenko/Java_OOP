@@ -83,5 +83,4 @@ public class ViewUser {
         System.out.print(message);
         return in.nextLine();
     }
-
 }

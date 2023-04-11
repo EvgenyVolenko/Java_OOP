@@ -4,7 +4,9 @@ import Seminar_05.model.User;
 import java.util.regex.Pattern;
 
 public class Validat {
+
     public void validate(User user) {
+
         if (!pattern.matcher(user.getFirstName()).find()) {
             throw new RuntimeException("Имя пользователя не может быть пустым");
         }
@@ -20,5 +22,4 @@ public class Validat {
     final String reDigit = "^\\d+$";
     final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
     final Pattern patternDigit = Pattern.compile((reDigit));
-
 }

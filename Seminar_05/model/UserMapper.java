@@ -1,6 +1,7 @@
 package Seminar_05.model;
 
 public class UserMapper {
+    
     public String map(User user) {
         return String.format("%s,%s,%s,%s", user.getId(), user.getFirstName(), user.getLastName(), user.getPhone());
     }

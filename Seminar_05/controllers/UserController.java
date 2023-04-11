@@ -38,5 +38,4 @@ public class UserController {
         valid.validate(user);
         repository.updateUser(user);
     }
-
 }
