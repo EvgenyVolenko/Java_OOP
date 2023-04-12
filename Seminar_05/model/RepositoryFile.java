@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RepositoryFile implements Repository {
+
     private UserMapper mapper = new UserMapper();
     private FileOperation fileOperation;
 
@@ -16,7 +17,7 @@ public class RepositoryFile implements Repository {
         List<String> lines = fileOperation.readAllLines();
         List<User> users = new ArrayList<>();
         for (String line : lines) {
-            users.add(mapper.map(line));
+            users.add(mapper.mapDot(line));
         }
         return users;
     }
@@ -39,14 +40,7 @@ public class RepositoryFile implements Repository {
         return id;
     }
 
-    private void saveUser(List<User> users) {
-        List<String> lines = new ArrayList<>();
-        for (User item : users) {
-            lines.add(mapper.map(item));
-        }
-        fileOperation.saveAllLines(lines);
-    }
-
+    @Override
     public void updateUser(User user) {
         List<User> users = getAllUsers();
         for (User item : users) {
@@ -59,6 +53,7 @@ public class RepositoryFile implements Repository {
         saveUser(users);
     }
 
+    @Override
     public void deleteUser(String userId) {
         List<User> users = getAllUsers();
         for (User item : users) {
@@ -67,5 +62,13 @@ public class RepositoryFile implements Repository {
             }
         }
         saveUser(users);
+    }
+    
+    private void saveUser(List<User> users) {
+        List<String> lines = new ArrayList<>();
+        for (User item : users) {
+            lines.add(mapper.mapDot(item));
+        }
+        fileOperation.saveAllLines(lines);
     }
 }
