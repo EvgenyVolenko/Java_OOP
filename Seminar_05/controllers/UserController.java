@@ -38,4 +38,8 @@ public class UserController {
         valid.validate(user);
         repository.updateUser(user);
     }
+
+    public void deleteUser(String userId) {
+        repository.deleteUser(userId);
+    }
 }

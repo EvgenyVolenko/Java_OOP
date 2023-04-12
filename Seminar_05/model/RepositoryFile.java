@@ -58,4 +58,14 @@ public class RepositoryFile implements Repository {
         }
         saveUser(users);
     }
+
+    public void deleteUser(String userId) {
+        List<User> users = getAllUsers();
+        for (User item : users) {
+            if (item.getId().equals(userId)) {
+                users.remove(item);
+            }
+        }
+        saveUser(users);
+    }
 }
