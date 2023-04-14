@@ -5,10 +5,11 @@ import java.util.List;
 
 public class RepositoryFile implements Repository {
 
-    private UserMapper mapper = new UserMapper();
+    private UserMapper mapper;
     private FileOperation fileOperation;
 
-    public RepositoryFile(FileOperation fileOperation) {
+    public RepositoryFile(UserMapper mapper, FileOperation fileOperation) {
+        this.mapper = mapper;
         this.fileOperation = fileOperation;
     }
 
