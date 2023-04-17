@@ -23,8 +23,10 @@ public class ViewNote {
 
         while (true) {
             try {
+                System.out.println();
                 Menu.printMenu();
                 String command = prompt("Введите команду: ");
+                System.out.println();
                 com = Commands.valueOf(command.toUpperCase());
 
                 if (com == Commands.EXIT) {
@@ -87,7 +89,6 @@ public class ViewNote {
         List<Note> allnotes = noteController.allnotes();
         for (Note note : allnotes) {
             System.out.println(note);
-            System.out.println();
         }
     }
 
