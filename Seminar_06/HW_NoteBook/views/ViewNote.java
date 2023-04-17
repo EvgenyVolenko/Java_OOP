@@ -1,24 +1,29 @@
 package Seminar_06.HW_NoteBook.views;
 
-import Seminar_05.controllers.UserController;
-import Seminar_05.model.User;
-
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import Seminar_06.HW_NoteBook.controllers.DateToString;
+import Seminar_06.HW_NoteBook.controllers.NoteController;
+import Seminar_06.HW_NoteBook.model.Note;
+
 public class ViewNote {
 
-    private UserController userController;
+    private NoteController noteController;
+    
 
-    public ViewNote(UserController userController) {
-        this.userController = userController;
+    public ViewNote(NoteController noteController) {
+        this.noteController = noteController;
     }
 
     public void run() {
+
         Commands com = Commands.NONE;
 
         while (true) {
             try {
+                Menu.printMenu();
                 String command = prompt("Введите команду: ");
                 com = Commands.valueOf(command.toUpperCase());
 
@@ -37,10 +42,10 @@ public class ViewNote {
                         list();
                         break;
                     case UPDATE:
-                        updateUser();
+                        updatenote();
                         break;
                     case DELETE:
-                        delUser();
+                        delnote();
                         break;
                 }
             } catch (Exception e) {
@@ -49,39 +54,39 @@ public class ViewNote {
         }
     }
 
-    private void updateUser() throws Exception {
-        String id = prompt("Идентификатор пользователя: ");
-        User user = userController.readUser(id);
-        System.out.println(user);
+    private void updatenote() throws Exception {
+        String id = prompt("Идентификатор записи: ");
+        Note note = noteController.readNote(id);
+        System.out.println(note);
         System.out.println();
-        String firstName = prompt("Имя: ");
-        String lastName = prompt("Фамилия: ");
-        String phone = prompt("Номер телефона: ");
-        userController.updateUser(new User(id, firstName, lastName, phone));
+        String dateTime = new DateToString(new Date()).toString();
+        String header = prompt("Заголовок: ");
+        String noteText = prompt("Текст записи: ");
+        noteController.updateNote(new Note(id, dateTime, header, noteText));
     }
 
     private void create() {
-        String firstName = prompt("Имя: ");
-        String lastName = prompt("Фамилия: ");
-        String phone = prompt("Номер телефона: ");
-        userController.saveUser(new User(firstName, lastName, phone));
+        String dateTime = new DateToString(new Date()).toString();
+        String header = prompt("Заголовок: ");
+        String noteText = prompt("Текст записи: ");
+        noteController.saveNote(new Note(dateTime, header, noteText));
     }
 
     private void read() throws Exception {
-        String id = prompt("Идентификатор пользователя: ");
-        User user = userController.readUser(id);
-        System.out.println(user);
+        String id = prompt("Идентификатор записи: ");
+        Note note = noteController.readNote(id);
+        System.out.println(note);
     }
 
-    private void delUser() throws Exception {
-        String id = prompt("Идентификатор пользователя для удаления: ");
-        userController.deleteUser(id);
+    private void delnote() throws Exception {
+        String id = prompt("Идентификатор записи для удаления: ");
+        noteController.deleteNote(id);
     }
 
     private void list() {
-        List<User> allUsers = userController.allUsers();
-        for (User user : allUsers) {
-            System.out.println(user);
+        List<Note> allnotes = noteController.allnotes();
+        for (Note note : allnotes) {
+            System.out.println(note);
             System.out.println();
         }
     }
