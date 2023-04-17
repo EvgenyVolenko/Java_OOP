@@ -11,6 +11,7 @@ import Seminar_06.HW_NoteBook.model.Note;
 public class ViewNote {
 
     private NoteController noteController;
+    private DateToString dateTS = new DateToString(null);
     
     public ViewNote(NoteController noteController) {
         this.noteController = noteController;
@@ -60,14 +61,16 @@ public class ViewNote {
         Note note = noteController.readNote(id);
         System.out.println(note);
         System.out.println();
-        String dateTime = new DateToString(new Date()).toString();
+        dateTS.setDate(new Date());
+        String dateTime = dateTS.toString();
         String header = prompt("Заголовок: ");
         String noteText = prompt("Текст записи: ");
         noteController.updateNote(new Note(id, dateTime, header, noteText));
     }
 
     private void create() {
-        String dateTime = new DateToString(new Date()).toString();
+        dateTS.setDate(new Date());
+        String dateTime = dateTS.toString();
         String header = prompt("Заголовок: ");
         String noteText = prompt("Текст записи: ");
         noteController.saveNote(new Note(dateTime, header, noteText));
