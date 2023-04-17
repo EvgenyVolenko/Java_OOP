@@ -50,7 +50,7 @@ public class ViewNote {
     }
 
     private void updateUser() throws Exception {
-        String id = prompt("Идентификатор пользователя: ");
+        String id = prompt("Идентификатор записи: ");
         User user = userController.readUser(id);
         System.out.println(user);
         System.out.println();

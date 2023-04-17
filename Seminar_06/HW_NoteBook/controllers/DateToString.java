@@ -12,7 +12,7 @@ public class DateToString {
         this.date = date;
     }
 
-    public Date getDate() {
+    public Date setDate() {
         return date;
     }
 
