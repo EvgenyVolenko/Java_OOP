@@ -12,10 +12,6 @@ public class DateToString {
         this.date = date;
     }
 
-    public Date setDate() {
-        return date;
-    }
-
     @Override
     public String toString() {
         return formatForDate.format(date);

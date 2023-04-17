@@ -7,16 +7,20 @@ public class Note {
     private String header;
     private String noteText;
 
-    public Note(String id, String dateTime, String header, String noteText) {
-        this.id = id;
+    public Note(String dateTime, String header, String noteText) {
         this.dateTime = dateTime;
         this.header = header;
         this.noteText = noteText;
     }
 
+    public Note(String id, String dateTime, String header, String noteText) {
+        this(dateTime, header, noteText);
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "Запись № " + id + " Дата, время " + getDateTime() + "\nЗаголовок" + header + "\n" + noteText;
+        return "Запись № " + id + ". Дата, время " + getDateTime() + "\nЗаголовок: " + header + "\nТекст записи: " + noteText;
     }
 
     public String getId() {
