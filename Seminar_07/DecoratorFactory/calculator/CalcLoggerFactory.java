@@ -1,6 +1,7 @@
 package Seminar_07.DecoratorFactory.calculator;
 
-public class CalcLoggerFactory implements ICalculableFactory{
+public class CalcLoggerFactory implements ICalculableFactory {
+
     private Loggable loggable;
 
     public CalcLoggerFactory(Loggable loggable) {
