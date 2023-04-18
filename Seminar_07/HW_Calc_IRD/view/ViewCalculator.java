@@ -35,7 +35,7 @@ public class ViewCalculator {
                 }
                 if (cmd.equals("=")) {
                     int[] result = calculator.getResult();
-                    System.out.printf("Результат %d + (%d) * i \n", result[0], result[1]);
+                    System.out.printf("Результат z = %d + (%d) * i \n", result[0], result[1]);
                     break;
                 }
             }

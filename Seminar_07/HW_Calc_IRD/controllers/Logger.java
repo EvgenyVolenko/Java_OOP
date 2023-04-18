@@ -6,7 +6,8 @@ public class Logger implements Loggable {
 
     @Override
     public void log(String message) {
-        Date date = new Date();
-        System.out.printf("%s \n %s", date.toString(), message);
+        DateToString dateTS = new DateToString(null);
+        dateTS.setDate(new Date());
+        System.out.printf("%s \n %s", dateTS.toString(), message);
     }
 }
