@@ -15,23 +15,26 @@ public class ViewCalculator {
 
     public void run() {
         while (true) {
-            int primaryArg = promptInt("Введите первый аргумент: ");
+            int[] primaryArg = promptComplex("Введите первый аргумент (вещественная часть, а затем мнимая): ");
+            // System.out.printf("z = %d + (%d)*i\n", primaryArg[0], primaryArg[1]);
             Calculable calculator = calculableFactory.create(primaryArg);
             while (true) {
                 String cmd = prompt("Введите команду (*, +, =) : ");
                 if (cmd.equals("*")) {
-                    int arg = promptInt("Введите второй аргумент: ");
+                    int[] arg = promptComplex("Введите второй аргумент (вещественная часть, а затем мнимая): ");
+                    // System.out.printf("z = %d + (%d)*i\n", arg[0], arg[1]);
                     calculator.multi(arg);
                     continue;
                 }
                 if (cmd.equals("+")) {
-                    int arg = promptInt("Введите второй аргумент: ");
+                    int[] arg = promptComplex("Введите второй аргумент (вещественная часть, а затем мнимая): ");
+                    // System.out.printf("z = %d + (%d)*i\n", arg[0], arg[1]);
                     calculator.sum(arg);
                     continue;
                 }
                 if (cmd.equals("=")) {
-                    int result = calculator.getResult();
-                    System.out.printf("Результат %d\n", result);
+                    int[] result = calculator.getResult();
+                    System.out.printf("Результат %d + (%d) * i \n", result[0], result[1]);
                     break;
                 }
             }
@@ -49,9 +52,19 @@ public class ViewCalculator {
         return in.nextLine();
     }
 
-    private int promptInt(String message) {
+    // private int promptInt(String message) {
+    //     Scanner in = new Scanner(System.in);
+    //     System.out.print(message);
+    //     return Integer.parseInt(in.nextLine());
+    // }
+
+    private int[] promptComplex(String message) {
         Scanner in = new Scanner(System.in);
         System.out.print(message);
-        return Integer.parseInt(in.nextLine());
+        int[] arr = new int[2];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = Integer.parseInt(in.nextLine());
+        }
+        return arr;
     }
 }

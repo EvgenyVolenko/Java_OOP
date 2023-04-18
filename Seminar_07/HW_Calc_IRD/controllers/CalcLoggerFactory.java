@@ -13,7 +13,7 @@ public class CalcLoggerFactory implements ICalculableFactory {
     }
 
     @Override
-    public Calculable create(int primaryArg) {
+    public Calculable create(int[] primaryArg) {
         return new CalcLogger(new Calculator(primaryArg), loggable);
     }
 }
