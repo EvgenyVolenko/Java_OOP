@@ -28,7 +28,6 @@ public class CalcLogger implements Calculable {
     @Override
     public int[] getResult() {
         int[] res = calculable.getResult();
-        loggable.log(String.format("Получили результат z = %d + (%d) * i \n", res[0], res[1]));
         return res;
     }
 }
