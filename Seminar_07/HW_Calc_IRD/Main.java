@@ -1,6 +1,10 @@
 package Seminar_07.HW_Calc_IRD;
 
-// Создать логирование операций, для класса Calculator. Класс Calculator не должен изменится.
+import Seminar_07.HW_Calc_IRD.controllers.CalcLoggerFactory;
+import Seminar_07.HW_Calc_IRD.controllers.Logger;
+import Seminar_07.HW_Calc_IRD.model.ICalculableFactory;
+import Seminar_07.HW_Calc_IRD.view.ViewCalculator;
+
 public class Main {
     public static void main(String[] args) {
 

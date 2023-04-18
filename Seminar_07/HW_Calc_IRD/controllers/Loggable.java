@@ -1,4 +1,4 @@
-package Seminar_07.HW_Calc_IRD;
+package Seminar_07.HW_Calc_IRD.controllers;
 
 public interface Loggable {
 

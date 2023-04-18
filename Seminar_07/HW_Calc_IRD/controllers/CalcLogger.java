@@ -1,4 +1,6 @@
-package Seminar_07.HW_Calc_IRD;
+package Seminar_07.HW_Calc_IRD.controllers;
+
+import Seminar_07.HW_Calc_IRD.model.Calculable;
 
 public class CalcLogger implements Calculable {
 

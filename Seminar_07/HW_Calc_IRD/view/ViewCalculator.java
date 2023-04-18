@@ -1,6 +1,9 @@
-package Seminar_07.HW_Calc_IRD;
+package Seminar_07.HW_Calc_IRD.view;
 
 import java.util.Scanner;
+
+import Seminar_07.HW_Calc_IRD.model.Calculable;
+import Seminar_07.HW_Calc_IRD.model.ICalculableFactory;
 
 public class ViewCalculator {
 
