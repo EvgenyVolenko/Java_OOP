@@ -30,4 +30,10 @@ public class CalcLogger implements Calculable {
         int[] res = calculable.getResult();
         return res;
     }
+
+    @Override
+    public Calculable sub(int[] arg) {
+        loggable.log(String.format("Вычитаем z = %d + (%d) * i \n", arg[0], arg[1]));
+        return calculable.sub(arg);
+    }
 }
