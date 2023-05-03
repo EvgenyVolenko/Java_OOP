@@ -1,8 +1,8 @@
 package Seminar_07.HW_Calc_IRD_Class.controllers;
 
-import Seminar_07.HW_Calc_IRD.model.Calculable;
-import Seminar_07.HW_Calc_IRD.model.Calculator;
-import Seminar_07.HW_Calc_IRD.model.ICalculableFactory;
+import Seminar_07.HW_Calc_IRD_Class.model.Calculable;
+import Seminar_07.HW_Calc_IRD_Class.model.Calculator;
+import Seminar_07.HW_Calc_IRD_Class.model.ICalculableFactory;
 
 public class CalcLoggerFactory implements ICalculableFactory {
 
