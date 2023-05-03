@@ -17,6 +17,14 @@ public final class Calculator implements Calculable {
     }
 
     @Override
+    public Calculable sub(int[] arg) {
+        for (int i = 0; i < arg.length; i++) {
+            primaryArg[i] -= arg[i];
+        }
+        return this;
+    }
+
+    @Override
     public Calculable multi(int[] arg) {
         int temp = primaryArg[0];
         primaryArg[0] = primaryArg[0] * arg[0] - primaryArg[1] * arg[1];

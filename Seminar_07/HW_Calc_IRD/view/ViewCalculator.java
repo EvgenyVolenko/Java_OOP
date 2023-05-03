@@ -22,7 +22,7 @@ public class ViewCalculator {
 
             while (true) {
 
-                String cmd = prompt("Введите команду (*, +, =) : ");
+                String cmd = prompt("Введите команду (*, +, -, =) : ");
                 if (cmd.equals("*")) {
                     int[] arg = promptComplex("Введите второй аргумент (вещественная часть, а затем мнимая): ");
                     calculator.multi(arg);
@@ -33,6 +33,11 @@ public class ViewCalculator {
                     calculator.sum(arg);
                     continue;
                 }
+                if (cmd.equals("-")) {
+                    int[] arg = promptComplex("Введите второй аргумент (вещественная часть, а затем мнимая): ");
+                    calculator.sub(arg);
+                    continue;
+                }
                 if (cmd.equals("=")) {
                     int[] result = calculator.getResult();
                     System.out.printf("Результат z = %d + (%d) * i \n", result[0], result[1]);
@@ -40,7 +45,7 @@ public class ViewCalculator {
                 }
             }
             String cmd = prompt("Еще посчитать (Y/N)?");
-            if (cmd.equals("Y")) {
+            if (cmd.equalsIgnoreCase("Y")) {
                 continue;
             }
             break;
