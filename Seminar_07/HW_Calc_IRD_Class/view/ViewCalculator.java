@@ -65,10 +65,8 @@ public class ViewCalculator {
         Scanner in = new Scanner(System.in);
         System.out.print(message);
         IrDigit ird = new IrDigit();
-        int a = Integer.parseInt(in.nextLine());
-        ird.setMaterial(a);
-        int b = Integer.parseInt(in.nextLine());
-        ird.setImaginary(b);
+        ird.setMaterial(Integer.parseInt(in.nextLine()));
+        ird.setImaginary(Integer.parseInt(in.nextLine()));
         return ird;
     }
 }
