@@ -2,9 +2,11 @@ package Seminar_07.HW_Calc_IRD_Class.model;
 
 public interface Calculable {
 
-    Calculable sum(int[] arg);
+    Calculable sum(IrDigit arg);
 
-    Calculable multi(int[] arg);
+    Calculable sub(IrDigit arg);
 
-    int[] getResult();
+    Calculable multi(IrDigit arg);
+
+    IrDigit getResult();
 }

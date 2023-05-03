@@ -1,6 +1,7 @@
 package Seminar_07.HW_Calc_IRD_Class.controllers;
 
 import Seminar_07.HW_Calc_IRD_Class.model.Calculable;
+import Seminar_07.HW_Calc_IRD_Class.model.IrDigit;
 
 public class CalcLogger implements Calculable {
 
@@ -10,24 +11,30 @@ public class CalcLogger implements Calculable {
     public CalcLogger(Calculable calculable, Loggable loggable) {
         this.calculable = calculable;
         this.loggable = loggable;
-        loggable.log(String.format("Число z = %d + (%d) * i \n", calculable.getResult()[0], calculable.getResult()[1]));
+        loggable.log(String.format("Число z = %s \n", getResult().toString()));
     }
 
     @Override
-    public Calculable sum(int[] arg) {
-        loggable.log(String.format("Прибавляем z = %d + (%d) * i \n", arg[0], arg[1]));
+    public Calculable sum(IrDigit arg) {
+        loggable.log(String.format("Прибавляем z = %s \n", arg.toString()));
         return calculable.sum(arg);
     }
 
     @Override
-    public Calculable multi(int[] arg) {
-        loggable.log(String.format("Умножаем на z = %d + (%d) * i \n", arg[0], arg[1]));
+    public Calculable sub(IrDigit arg) {
+        loggable.log(String.format("Вычитаем z = %s \n", arg.toString()));
+        return calculable.sub(arg);
+    }
+
+    @Override
+    public Calculable multi(IrDigit arg) {
+        loggable.log(String.format("Умножаем на z = %s \n", arg.toString()));
         return calculable.multi(arg);
     }
 
     @Override
-    public int[] getResult() {
-        int[] res = calculable.getResult();
+    public IrDigit getResult() {
+        IrDigit res = calculable.getResult();
         return res;
     }
 }
